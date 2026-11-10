@@ -1,0 +1,3 @@
+patch:
+  key_binder/bindings/+:
+    - { when: always, accept: F18, select: rime_frost_double_pinyin_flypy }

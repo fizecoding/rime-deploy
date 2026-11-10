@@ -1,0 +1,16 @@
+# Rime dictionary
+# encoding: utf-8
+# 个人词频词典：由语料训练生成（corpus/train_personal_dict.py）
+# 本文件为脱敏样例，仅保留格式示例；完整词库是训练产物，不入库。
+---
+name: personal
+version: "1.0"
+sort: by_weight
+...
+# 提权词（白霜已收录，按个人语料提升权重）
+破涕为笑	po ti wei xiao	26100
+哈哈哈	ha ha ha	24551
+嗯嗯	en en	19105
+没事	mei shi	16547
+# 新词（白霜未收录，个人高频）
+笑死了	xiao si le	16832

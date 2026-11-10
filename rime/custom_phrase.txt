@@ -1,0 +1,11 @@
+# 自定义短语（自有部分）：由 install.sh 追加到白霜自带 custom_phrase.txt 末尾
+# 格式：词汇<Tab>编码<Tab>权重
+iOS	ios
+iPhone	i
+macOS	macos
+Mac	mac
+B站	bzhan
+HarmonyOS	hm	2
+T恤	txu
+U盤	upan
+up主	upzhu

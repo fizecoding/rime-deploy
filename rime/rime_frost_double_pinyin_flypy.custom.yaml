@@ -1,0 +1,3 @@
+patch:
+  key_binder/bindings/+:
+    - { when: always, accept: F18, select: easy_en }

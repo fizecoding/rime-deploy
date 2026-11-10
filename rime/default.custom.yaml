@@ -1,0 +1,33 @@
+patch:
+  # abc.123 这类输入保护：字母+点+数字（版本号/小数），不影响正常句号
+  recognizer/patterns/version_num: "^[A-Za-z]+[.][0-9].*"
+  # 字母/数字后跟半角符号: 保持原样输入, 空格上屏；- = 除外，留给候选翻页
+  recognizer/patterns/ascii_raw: '^[A-Za-z0-9]+[.,;:?!@#%^&*()_+|~<>].*$'
+
+  schema_list:
+    - schema: rime_frost_double_pinyin_flypy # 小鹤双拼（主力）
+    - schema: rime_frost_double_pinyin_sogou # 搜狗双拼
+    - schema: rime_frost_double_pinyin # 自然码双拼
+    - schema: rime_frost # 白霜全拼
+    - schema: easy_en # 英文（带联想），Caps 切换
+
+  menu/page_size: 5 # 候选词个数
+
+  # Caps 交给 key_binder 做方案切换；Shift 点按切中英直通，按住=大写
+  ascii_composer/good_old_caps_lock: false
+  ascii_composer/switch_key:
+    Caps_Lock: noop # 让 Caps 穿透到 key_binder（方案切换用）
+    Shift_L: commit_code # 点一下：上屏并切中/英直通
+    Shift_R: commit_code
+    Control_L: noop
+    Control_R: noop
+
+  key_binder/bindings:
+    - { when: composing, accept: Control+BackSpace, send: Escape } # 一次清空全部未上屏输入（Cmd+Backspace 被 macOS 留给 App，输入法收不到）
+    - { when: composing, accept: Tab, send: Shift+Right } # "tab" 键分词
+    # 仅候选状态翻页；无候选词时仍按标点/英文混输规则处理
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    - { when: always, accept: Control+Shift+4, toggle: simplification } # 繁简切换
+    # , . [ ] 不绑定翻页，避免吃掉密码/网址/代码里的符号；
+    # abc.com 之类的 URL 由 recognizer 智能识别原样上屏

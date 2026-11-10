@@ -1,0 +1,5 @@
+# 语料与训练产物不入库
+my_messages.*
+*.log
+decrypted/
+db_storage/

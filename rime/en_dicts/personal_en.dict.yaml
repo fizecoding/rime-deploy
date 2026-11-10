@@ -1,0 +1,12 @@
+# Rime dictionary
+# encoding: utf-8
+# 个人英文词库：由语料训练生成。本文件为脱敏样例，完整词库是训练产物，不入库。
+---
+name: personal_en
+version: "1.0"
+sort: by_weight
+...
+ok	ok	20000
+RTK	rtk	7230
+IMU	imu	4500
+GNSS	gnss	3000
