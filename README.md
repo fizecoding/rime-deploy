@@ -30,7 +30,7 @@ docs/      部署全记录 / 配置说明 / 恢复指南
 ```bash
 brew install --cask squirrel
 git clone https://github.com/gaboolic/rime-frost ~/Library/Rime
-git clone <本仓库> && cd rime-deploy
+git clone https://github.com/fizecoding/rime-deploy && cd rime-deploy
 ./install.sh
 # 系统设置 → 键盘 → 输入法：添加 鼠须管（简体）+ ABC
 # 鼠须管菜单 → 重新部署
